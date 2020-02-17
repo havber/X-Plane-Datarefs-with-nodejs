@@ -1,4 +1,4 @@
-# x-plane-dref-nodejs
+# Read X Plane datarefs with node.js
 Simple node script to fetch datarefs directly from x-plane, without the need for a plugin
 
 Make sure x-plane is running (change de IP in the script if you are running this from a different machine on the same network as the computer where X Plane is running)
