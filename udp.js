@@ -71,7 +71,7 @@ client.on('message', (message, remote) => {
         let offset = 9;
         let messages = [];
 
-        // RREFs values are floats. They occupy 8 bytes. On message can contain sveral values,
+        // RREFs values are floats. They occupy 8 bytes. One message can contain several values,
         // depending on how many you asked for. Read every value by iterating over message and
         // increasing the offset by 8.
         while (offset < message.length - 9) {
