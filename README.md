@@ -1,7 +1,7 @@
 # Read X Plane datarefs with node.js
 Simple node script to fetch datarefs directly from x-plane, without the need for a plugin
 
-Make sure x-plane is running (change the IP-adress in the script if you are running this from a different machine on the same network as the computer where X Plane is running)
+Make sure x-plane is running (change the IP-address in the script if you are running this from a different machine on the same network as the computer where X Plane is running)
 
 `$ node udp.js`
 
