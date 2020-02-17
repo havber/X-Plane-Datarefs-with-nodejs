@@ -64,7 +64,7 @@ client.on('message', (message, remote) => {
     // which request X Plane is responding to
     // The values starts at offset 9. 8 bytes per value. Values will appear in the same order
     // as the requested values 
-    const label = message.readInt8(0).toString();
+    const label = message.toString('utf8', 0, 4);
     if (label !== 'RREF') {
         console.log('Unknown package. Ignoring');
     } else {
