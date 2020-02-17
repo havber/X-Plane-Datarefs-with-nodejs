@@ -37,6 +37,7 @@ const messages = [
     createMessage('sim/flightmodel/position/latitude', 1, FREQ),
     createMessage('sim/flightmodel/position/longitude', 1, FREQ),
     createMessage('sim/flightmodel/position/mag_psi', 1, FREQ),
+    // Add as many as you like (within X Plane's recommended limitation) 
 ];
 
 client.on('listening', () => {
@@ -74,9 +75,15 @@ client.on('message', (message, remote) => {
         // depending on how many you asked for. Read every value by iterating over message and
         // increasing the offset by 8.
         while (offset < message.length - 9) {
-            messages = messages.push(message.readFloatLE(offset));
+            const value = message.readFloatLE(offset);
+            messages = messages.push(value);
+            
+            console.log('Decoded message: ' + value);
+            
             offset += 8;
         }
+        
+        // Do something with the values (e.g. emit them over socket.io to a client, or whatever)
     }
 });
 
