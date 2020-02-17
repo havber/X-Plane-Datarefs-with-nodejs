@@ -8,3 +8,5 @@ Make sure x-plane is running (change de IP in the script if you are running this
 X Plane will respond with the requested values at you chosen frequency.
 
 See inline comments for explanation about X Plane's data structures and how to read decode the response.
+
+Official list of available datarefs: https://developer.x-plane.com/datarefs/
