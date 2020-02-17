@@ -9,7 +9,7 @@ const createMessage = (dref, idx, freq) => {
 
     // A dataref request should be 413 bytes long
     // {
-    //      label: null terminated 4 chars (5 bytes)
+    //      label: null terminated 4 chars (5 bytes), e.g. "RREF\0"
     //      frequency: int (4 bytes)
     //      index: int (4 bytes)
     //      name. char (400 bytes)
