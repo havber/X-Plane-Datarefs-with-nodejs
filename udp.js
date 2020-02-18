@@ -37,7 +37,7 @@ const messages = [
     createMessage('sim/flightmodel/position/latitude', 1, FREQ),
     createMessage('sim/flightmodel/position/longitude', 1, FREQ),
     createMessage('sim/flightmodel/position/mag_psi', 1, FREQ),
-    // Add as many as you like (within X Plane's recommended limitation) 
+    // Add as many as you like (within X Plane's recommended limitation)
 ];
 
 client.on('listening', () => {
@@ -63,7 +63,7 @@ client.on('message', (message, remote) => {
     // The index (at offset 5) is the index that you specified in the message. To specify
     // which request X Plane is responding to
     // The values starts at offset 9. 8 bytes per value. Values will appear in the same order
-    // as the requested values 
+    // as the requested values
     const label = message.toString('utf8', 0, 4);
     if (label !== 'RREF') {
         console.log('Unknown package. Ignoring');
@@ -76,13 +76,13 @@ client.on('message', (message, remote) => {
         // increasing the offset by 8.
         while (offset < message.length) {
             const value = message.readFloatLE(offset);
-            messages = messages.push(value);
-            
+            messages.push(value);
+
             console.log('Decoded message: ' + value);
-            
+
             offset += 8;
         }
-        
+
         // Do something with the values (e.g. emit them over socket.io to a client, or whatever)
     }
 });
